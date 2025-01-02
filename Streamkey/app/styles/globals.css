@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 8%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 12%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 0 84% 49%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 63%;
+  --accent: 0 0% 12%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 18%;
+  --input: 0 0% 18%;
+  --ring: 0 84% 49%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .streamkey-background {
+    @apply bg-gradient-to-b from-black/60 via-black/50 to-black/60;
+  }
+  
+  .streamkey-input {
+    @apply bg-zinc-800/50 text-white border-zinc-700 rounded-md focus:border-zinc-500 focus:ring-0;
+  }
+  
+  .streamkey-button {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium rounded-md;
+  }
+
+  .streamkey-link {
+    @apply text-zinc-400 hover:text-white transition-colors;
+  }
+
+  .streamkey-card {
+    @apply bg-black/90 rounded-lg;
+  }
+
+  .streamkey-checkbox {
+    @apply border-zinc-500 data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
